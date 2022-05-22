@@ -29,7 +29,7 @@ public class DoctorController {
 //	}
 	
 	@PostMapping("/doctor")
-	public String addDoctor(@RequestBody Doctor doctor) {
+	public Doctor addDoctor(@RequestBody Doctor doctor) {
 		return doctorService.addDoctor(doctor);
 		
 	}

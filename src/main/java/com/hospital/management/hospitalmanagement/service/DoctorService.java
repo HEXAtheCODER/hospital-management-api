@@ -17,15 +17,15 @@ public class DoctorService {
 	@Autowired
 	public DoctorDao doctorDao;
 
-	public String addDoctor(Doctor doctor) {
+	public Doctor addDoctor(Doctor doctor) {
 		System.out.println(doctor.getDoctorName());
 		boolean isPresent = doctorDao.existsById(doctor.getDoctorId());
 		if(isPresent) {
-			return "User already present";
+			return new Doctor();
 			
 		}
 		doctorDao.save(doctor);
-		return "Success";
+		return doctor;
 	}
 
 	public List<Doctor> getAllDoctors() {
